@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Product;
@@ -48,4 +50,10 @@ public class ProductController {
 		productService.xoaProduct(id);
 		return "Xoá tahnffh công product";
 	}
+
+//	@RequestMapping(method = RequestMethod.GET)
+//	public List<Product> findByName(@RequestParam(value = "ten") String ten) {
+//		List<Product> products = productService.findBytenProduct(ten);
+//		return products;
+//	}
 }

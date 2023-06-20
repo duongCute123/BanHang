@@ -50,5 +50,12 @@ public class ProductServiceImlp implements ProductService {
 		productReponsetory.deleteById(id);
 
 	}
+	// Tim san pham theo ten nhe
+	@Override
+	public List<Product> findBytenProduct(String tenProduct) {
+		List<Product> products=productReponsetory.findByName(tenProduct);
+		
+		return products;
+	}
 
 }

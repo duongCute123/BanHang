@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,10 +30,12 @@ public class Product {
 	double gia;
 	Date ngayNhap;
 	String anh;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "catergoriId")
+	@JsonIgnore
 	Catergori catergori;
 	@OneToMany(mappedBy = "product")
+	@JsonIgnore
 	List<OrderDetail> details;
 	public int getId() {
 		return id;

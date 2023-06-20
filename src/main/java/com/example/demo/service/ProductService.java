@@ -9,4 +9,5 @@ public interface ProductService {
 	Product getById(int id);
 	void saveProduct(Product product);
 	void xoaProduct(int id);
+	List<Product> findBytenProduct(String tenProduct);
 }
