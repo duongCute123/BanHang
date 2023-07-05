@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.entity.Order;
 
 public interface OrderService {
-	public Order findAllOrder();
+	public List<Order> findAllOrder();
 	public Order finByOneOrder(int id);
 	public void addOrder(Order order);
-	public Order xoaOrder(int id);
+	public void xoaOrder(int id);
 }
