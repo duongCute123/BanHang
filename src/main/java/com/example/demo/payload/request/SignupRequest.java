@@ -2,9 +2,7 @@ package com.example.demo.payload.request;
 
 import java.util.Set;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class SignupRequest {
   @NotBlank
