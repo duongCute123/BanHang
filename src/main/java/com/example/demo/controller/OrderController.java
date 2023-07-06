@@ -64,4 +64,18 @@ public class OrderController {
 		return orderDetail;
 	}
 
+//	Xoá 1 đơn hàng nhé
+	@PostMapping("/order/{id}")
+	public String xoaDonHang(@PathVariable int id) {
+		orderService.xoaOrder(id);
+		return "Xoá thành công nhé" + id;
+	}
+
+//	Xoá 1 chi tiết đơn hàng nhé các bạn
+	@PostMapping("/orderdetail/{id}")
+	public String xoaChiTietDonHanh(@PathVariable int id) {
+		orderDetailService.xoaOrderDetail(id);
+		return "Xoá thành công đơn hàng nhé bạn" + id;
+	}
+
 }
