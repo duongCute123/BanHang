@@ -43,10 +43,10 @@ public class ProductController {
 		return product;
 	}
 
-	@DeleteMapping("/product")
+	@DeleteMapping("/product/{id}")
 	public String xoaProduct(@PathVariable int id) {
 		productService.xoaProduct(id);
-		return "Xoá tahnffh công product";
+		return "Xoá tahnffh công product"+id;
 	}
 
 //	@RequestMapping(method = RequestMethod.GET)

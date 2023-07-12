@@ -23,14 +23,14 @@ public class OrderController {
 	OrderService orderService;
 	@Autowired
 	OrderDetailService orderDetailService;
-
+	//Lấy dánh sách đơn hàng nhé
 	@GetMapping("/order")
 	public List<Order> getAllDonHang() {
 		List<Order> list = new ArrayList<>();
 		list = orderService.findAllOrder();
 		return list;
 	}
-
+	//Lấy tất cả thông chi tiết đơn hàng
 	@GetMapping("/orderdetail")
 	public List<OrderDetail> getAllChiTietDonHang() {
 		List<OrderDetail> details = new ArrayList<>();
