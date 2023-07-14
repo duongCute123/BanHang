@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,11 +26,14 @@ public class Customer {
 	String email;
 	String anh;
 	@OneToMany(mappedBy = "customer")
+	@JsonIgnore
 	List<Order> orders;
 	@OneToOne
 	@JoinColumn(name = "id")
+	@JsonIgnore
 	User user;
-	
+	@OneToOne(mappedBy = "customer")
+	ShoppingCart shoppingCart;
 	public int getId() {
 		return id;
 	}
@@ -71,6 +76,22 @@ public class Customer {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	public ShoppingCart getShoppingCart() {
+		return shoppingCart;
+	}
+	public void setShoppingCart(ShoppingCart shoppingCart) {
+		this.shoppingCart = shoppingCart;
+	}
+	public Customer(int id, String diaChi, String sdt, String email, String anh) {
+		super();
+		this.id = id;
+		this.diaChi = diaChi;
+		this.sdt = sdt;
+		this.email = email;
+		this.anh = anh;
+	}
+	
+	
 	
 	
 
