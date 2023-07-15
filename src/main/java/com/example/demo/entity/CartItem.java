@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -18,9 +20,11 @@ public class CartItem {
 	int id;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "shopingcartId")
+	@JsonIgnore
 	ShoppingCart shoppingCart;
 	@OneToOne
 	@JoinColumn(name = "productId")
+	@JsonIgnore
 	Product product;
 	double unitPrice;
 	int soLuong;
@@ -70,6 +74,10 @@ public class CartItem {
 		this.id = id;
 		this.unitPrice = unitPrice;
 		this.soLuong = soLuong;
+	}
+
+	public CartItem() {
+		
 	}
 
 }

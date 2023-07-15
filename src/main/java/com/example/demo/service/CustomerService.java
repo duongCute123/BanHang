@@ -16,4 +16,5 @@ public interface CustomerService {
 
 //	Xoá một khách hàng ra khỏi cớ sở dữ liệu;
 	public void xoaCustomer(int id);
+	
 }

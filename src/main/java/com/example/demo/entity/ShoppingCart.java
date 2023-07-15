@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,10 +23,12 @@ public class ShoppingCart {
 	int id;
 	@OneToOne
 	@JoinColumn(name = "customerId")
+	@JsonIgnore
 	Customer customer;
 	int soProduct;
 	double totalGia;
-	@OneToMany(mappedBy = "shoppingcart")
+	@OneToMany(mappedBy = "shoppingCart")
+	@JsonIgnore
 	Set<CartItem> cartItems;
 
 	public int getId() {
@@ -73,5 +77,10 @@ public class ShoppingCart {
 		this.soProduct = soProduct;
 		this.totalGia = totalGia;
 	}
+
+	public ShoppingCart() {
+		super();
+	}
+	
 
 }
