@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +24,7 @@ public class Customer {
 	String email;
 	String anh;
 	@OneToMany(mappedBy = "customer")
+	@JsonIgnore
 	List<Order> orders;
 	public int getId() {
 		return id;

@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,9 +22,11 @@ public class OrderDetail {
 	double gia;
 	@ManyToOne
 	@JoinColumn(name = "productId")
+	@JsonIgnore
 	Product product;
 	@ManyToOne
 	@JoinColumn(name = "orderId")
+	@JsonIgnore
 	Order order;
 	public int getId() {
 		return id;
